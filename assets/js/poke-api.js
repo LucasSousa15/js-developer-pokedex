@@ -13,6 +13,9 @@ function convertPokeApiDetailToPokemon(pokeDetail) {
     pokemon.type = type
 
     pokemon.photo = pokeDetail.sprites.other.dream_world.front_default
+    pokemon.height = pokeDetail.height / 10;
+    pokemon.weight = pokeDetail.weight/10;
+    pokemon.abilities = pokeDetail.abilities.map((abilityInfo) => abilityInfo.ability.name);
 
     return pokemon
 }
